@@ -12,6 +12,7 @@ import { Selector } from './components/Selector/Selector';
 import { Field } from './components/Field/Field';
 import { Header } from './components/Header/Header';
 import { Home } from './pages/Home/Home';
+import { RecipePage } from './pages/RecipePage/RecipePage';
 
 
 // fetchRecipes().then((recipes) => {
@@ -24,7 +25,7 @@ function App() {
 
       <Header />
 
-      <Home />
+      <RecipePage />
 
 
     </div>
