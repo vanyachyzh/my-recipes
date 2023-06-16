@@ -42,14 +42,17 @@ export function Card() {
 
   const [card, setCard] = useState<Recipe | null>(null);
 
-  // useEffect(() => {
-  //   fetch('http://www.themealdb.com/api/json/v1/1/lookup.php?i=52772')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setCard(data.meals[0] as Recipe)
-  //       console.log(data.meals[0])
-  //     });
-  // }, []);
+// useEffect(() => {
+//   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+//   const apiUrl = 'http://www.themealdb.com/api/json/v1/1/lookup.php?i=52772';
+
+//   fetch(proxyUrl + apiUrl)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       setCard(data.meals[0] as Recipe);
+//       console.log(data.meals[0]);
+//     });
+// }, []);
 
   // if (card === null) {
   //   return null

@@ -1,12 +1,14 @@
 .selector {
-  width: 100px;
-  height: 30px;
-  background-color: #22A699;
+  width: 200px;
+  height: 100%;
   border: none;
   cursor: pointer;
   color: #fff;
   text-transform: uppercase;
   outline: none;
+  border: 1px solid gray;
+  color: gray;
+  padding: 10px;
 
   &__option {
     height: 25px;

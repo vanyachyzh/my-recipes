@@ -9,6 +9,9 @@ import { Toggle } from './components/Toggle/Toggle';
 import { Card } from './components/Card/Card';
 import { List } from './components/List/List';
 import { Selector } from './components/Selector/Selector';
+import { Field } from './components/Field/Field';
+import { Header } from './components/Header/Header';
+import { Home } from './pages/Home/Home';
 
 
 // fetchRecipes().then((recipes) => {
@@ -18,10 +21,10 @@ import { Selector } from './components/Selector/Selector';
 function App() {
   return (
     <div className="App">
-      <Logo></Logo>
-      <Selector />
 
-      <List />
+      <Header />
+
+      <Home />
 
 
     </div>
