@@ -1,16 +1,17 @@
 import './Button.scss';
 
 type Props = {
-  onClick: () => void
+  onClick?: () => void,
+  text: string
 }
 
-export function Button({ onClick }: Props) {
+export function Button({ onClick, text }: Props) {
   return (
     <button
       onClick={onClick}
       className='button'
     >
-      Something
+      {text}
     </button>
   )
 };

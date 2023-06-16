@@ -1,0 +1,49 @@
+.card {
+  padding: 32px;
+  width: min-content;
+  border: 1px solid #9f9f9f;
+
+  &__image {
+    width: 206px;
+    height: 206px;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+
+  &__category {
+    display: block;
+    text-align: start;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  &__title {
+    padding-bottom: 7px;
+    display: block;
+    text-align: start;
+    border-bottom: 1px solid #9f9f9f;
+    margin-bottom: 5px;
+    font-size: larger;
+    font-weight: 900;
+  }
+
+  &__ingredients {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 69px;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  &__ingredient {
+    height: 18px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: start;
+    gap: 4px;
+  }
+}
