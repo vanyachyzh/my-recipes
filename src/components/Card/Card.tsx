@@ -36,7 +36,6 @@ const cardMock = {
   strIngredient168: 'cscsdcdsc',
   strMeal: 'borshh',
   strCategory: 'beef'
-
 }
 
 export function Card() {

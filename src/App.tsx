@@ -7,6 +7,8 @@ import { Button } from './components/Button/Button';
 import { HeartIcon, PlusIcon } from './components/Icon/Icon';
 import { Toggle } from './components/Toggle/Toggle';
 import { Card } from './components/Card/Card';
+import { List } from './components/List/List';
+import { Selector } from './components/Selector/Selector';
 
 
 // fetchRecipes().then((recipes) => {
@@ -17,8 +19,9 @@ function App() {
   return (
     <div className="App">
       <Logo></Logo>
-      
-      <Card />
+      <Selector />
+
+      <List />
 
 
     </div>

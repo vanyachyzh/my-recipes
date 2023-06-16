@@ -1,0 +1,14 @@
+.selector {
+  width: 100px;
+  height: 30px;
+  background-color: #22A699;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  outline: none;
+
+  &__option {
+    height: 25px;
+  }
+}
