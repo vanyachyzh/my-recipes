@@ -1,17 +1,19 @@
-import { mockList } from '../../mock';
+import { listRecipes } from '../../tempData';
+import { normalizeRecipes } from '../../utils/normalizeRecipes';
 import { Card } from '../Card/Card';
 import './List.scss';
 
-type Props = {
-  onClick?: () => void,
-  text: string
-}
 
 export function List() {
+  console.log(normalizeRecipes(listRecipes))
+
   return (
     <ul className='list'>
-      {mockList.map(recipe => (
-        <Card key={recipe.strCategory}></Card>
+      {normalizeRecipes(listRecipes).map(recipe => (
+        <Card
+          key={recipe.idMeal}
+          recipe={recipe}
+        />
       ))}
     </ul>
   )

@@ -4,6 +4,7 @@ import { Logo } from '../Logo/Logo';
 import { Selector } from '../Selector/Selector';
 import { Field } from '../Field/Field';
 import { HeartIcon, PlusIcon } from '../Icon/Icon';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
 
@@ -16,14 +17,13 @@ export const Header = () => {
       <Selector />
       <Field />
 
-      <a className='header__link' href="#">
+      <Link to='favorite' className='header__link'>
         <HeartIcon isActive={true} />
-      </a>
+      </Link>
 
-      <a className='header__link' href="#">
+      <Link to='saved' className='header__link'>
         <PlusIcon isActive={true} />
-      </a>
-
+      </Link>
     </header>
   );
 };

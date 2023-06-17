@@ -1,10 +1,10 @@
 import { List } from "../../components/List/List";
-import './Home.scss';
+import './FavoritePage.scss';
 
-export function HomePage () {
+export function FavoritePage () {
   return (
     <div className="home">
-      <div>Home</div>
+            <div>Favorite</div>
       <List />
     </div>
   )
