@@ -1,7 +1,11 @@
 import { normalizedRecipe } from "../types/NormalizedRecipe";
 import { Recipe } from "../types/Recipe";
 
-export const normalizeRecipes = (recipes: Recipe[]): normalizedRecipe[] => {
+export const normalizeRecipes = (recipes: Recipe[] | undefined): normalizedRecipe[] => {
+  if (!recipes) {
+    return [];
+  }
+
   return recipes.map((recipe) => {
     const {
       strMeal,
