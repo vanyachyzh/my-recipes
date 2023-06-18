@@ -3,12 +3,14 @@ import './Toggle.scss';
 
 type Props = {
   icon: React.ComponentType<{ isActive: boolean }>;
+  action: () => void;
+  isActive: boolean
 };
 
-export function Toggle({ icon: Icon }: Props) {
-  const [isActive, setIsActive] = useState(false);
+export function Toggle({ icon: Icon, action, isActive }: Props) {
+
   const onClick = () => {
-    setIsActive(prev => !prev);
+    action();
   }
 
   return (

@@ -1,24 +1,27 @@
-import React, { ChangeEvent, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { updateCategory } from '../../slices/recipes';
+import { Category } from '../../types/Category';
 import './Selector.scss';
 
 export const Selector = () => {
-  const [selectedItemId, setSelectedItemId] = useState<string | undefined>('1');
+  const dispatch = useAppDispatch();
+  const { category } = useAppSelector((state) => state.recipes);
 
-  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const itemId = event.target.value;
-    setSelectedItemId(itemId);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+    dispatch(updateCategory(selectedValue as Category));
   };
 
   return (
-    <select
-      className='selector'
-      value={selectedItemId}
-      onChange={handleSelectChange}
-    >
-      <option className='selector__option' value="1">1</option>
-      <option className='selector__option' value="2">2</option>
-      <option className='selector__option' value="3">3</option>
+    <select className='selector' value={category} onChange={handleChange}>
+      {Object.keys(Category).map((option) => (
+        <option key={option} value={option} className='selector__option'>
+          {option}
+        </option>
+      ))}
     </select>
   );
 };
+
+
 

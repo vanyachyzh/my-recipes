@@ -1,4 +1,4 @@
-import { RecipeInfo } from "../../components/Recipe/Recipe";
+import { RecipeInfo } from "../../components/RecipeInfo/RecipeInfo";
 import './RecipePage.scss';
 
 export function RecipePage () {

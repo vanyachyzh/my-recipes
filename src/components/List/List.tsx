@@ -1,15 +1,17 @@
+import React from 'react';
 import { listRecipes } from '../../tempData';
-import { normalizeRecipes } from '../../utils/normalizeRecipes';
+import { normalizedRecipe } from '../../types/NormalizedRecipe';
 import { Card } from '../Card/Card';
 import './List.scss';
 
+type Props = {
+  recipes: normalizedRecipe[];
+};
 
-export function List() {
-  console.log(normalizeRecipes(listRecipes))
-
+export const List: React.FC<Props> = ({ recipes }) => {
   return (
     <ul className='list'>
-      {normalizeRecipes(listRecipes).map(recipe => (
+      {recipes.map(recipe => (
         <Card
           key={recipe.idMeal}
           recipe={recipe}

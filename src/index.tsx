@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 import './index.css';
 import App from './App';
 import { HashRouter, Route, Routes } from 'react-router-dom';
@@ -13,8 +15,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <HashRouter>
-    <Routes>
+    <Provider store={store}>
+      <HashRouter>
+        <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="favorite" element={<FavoritePage />} />
@@ -22,6 +25,7 @@ root.render(
             <Route path="recipe" element={<RecipePage />} />
           </Route>
         </Routes>
-    </HashRouter>
+      </HashRouter>
+    </Provider>
   </React.StrictMode>
 );

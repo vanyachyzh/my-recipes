@@ -10,6 +10,7 @@
 
   &__info {
     width: 500px;
+    height: 100vh;
   }
 
   &__image {
@@ -33,6 +34,16 @@
     text-align: start;
     border-bottom: 1px solid #9f9f9f;
     margin-bottom: 5px;
+    font-size: xx-large;
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    padding-bottom: 7px;
+    display: block;
+    text-align: start;
+    border-bottom: 1px solid #9f9f9f;
+    margin-bottom: 5px;
     font-size: larger;
     font-weight: 900;
   }
@@ -40,6 +51,8 @@
   &__ingredients {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
+    font-weight: 500;
   }
 
   &__ingredient {
@@ -47,6 +60,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__point {
+    text-align: start;
+    margin-bottom: 5px;
+    font-weight: 600;
 
     &--active {
       color: green;
@@ -57,5 +76,6 @@
     display: flex;
     justify-content: start;
     gap: 4px;
+    margin-bottom: 20px;
   }
 }

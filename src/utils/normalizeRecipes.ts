@@ -1,3 +1,4 @@
+import { CookingTime } from "../types/CookingTime";
 import { normalizedRecipe } from "../types/NormalizedRecipe";
 import { Recipe } from "../types/Recipe";
 
@@ -24,6 +25,17 @@ export const normalizeRecipes = (recipes: Recipe[]): normalizedRecipe[] => {
       }
     }
 
+    let cookingTime: CookingTime = CookingTime.None;
+    const instructionsLength = instructions.length;
+
+    if (instructionsLength > 6 && instructionsLength <= 15) {
+      cookingTime = CookingTime.Quick;
+    } else if (instructionsLength > 15) {
+      cookingTime = CookingTime.Long;
+    } else {
+      cookingTime = CookingTime.Medium;
+    }
+
     return {
       idMeal: idMeal as string | number | null,
       strCategory: strCategory as string,
@@ -31,6 +43,9 @@ export const normalizeRecipes = (recipes: Recipe[]): normalizedRecipe[] => {
       instructions,
       strMeal: strMeal as string,
       strMealThumb: strMealThumb as string,
+      cookingTime,
+      isFavorite: false,
+      isSaved: false
     };
   });
 };
