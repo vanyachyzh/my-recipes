@@ -42,6 +42,9 @@ const commentSlice = createSlice({
     updateRecipes: (state, action: PayloadAction<normalizedRecipe[]>) => {
       state.recipes = action.payload;
     },
+    updateCurrentRecipe: (state, action: PayloadAction<normalizedRecipe>) => {
+      state.currentRecipe = action.payload;
+    },
   },
   extraReducers: builder => builder
     .addCase(getRecipes.pending, (state) => {
@@ -63,6 +66,6 @@ const commentSlice = createSlice({
     }),
 });
 
-export const { updateQuery, updateCategory, updateRecipes } = commentSlice.actions;
+export const { updateQuery, updateCategory, updateRecipes, updateCurrentRecipe } = commentSlice.actions;
 
 export default commentSlice.reducer;

@@ -20,11 +20,9 @@ export function HomePage() {
   useEffect(() => {
     if (storedRecipes.length) {
       dispatch(updateRecipes(storedRecipes));
-      console.log(storedRecipes, 'from the storage')
     } else {
       dispatch(getRecipes())
       .then(r => {
-        console.log(r.payload, 'from the API')
         setItems('recipes', normalizeRecipes(r.payload as Recipe[]))
       });
 
