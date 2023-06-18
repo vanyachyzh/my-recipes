@@ -1,11 +1,9 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { normalizedRecipe } from '../types/NormalizedRecipe';
 import { Category } from '../types/Category';
-import { CookingTime } from '../types/CookingTime';
 import { fetchRecipes } from '../api';
 import { NormalizerOptions } from '@testing-library/react';
 import { Recipe } from '../types/Recipe';
-import { listRecipes } from '../tempData';
 import { normalizeRecipes } from '../utils/normalizeRecipes';
 
 export const getRecipes = createAsyncThunk(
@@ -16,7 +14,6 @@ export const getRecipes = createAsyncThunk(
 type RecipesState = {
   query: string;
   category: Category;
-  cookingTime: CookingTime;
   recipes: normalizedRecipe[];
   isLoading: boolean,
   hasError: boolean,
@@ -26,11 +23,10 @@ type RecipesState = {
 const initialState: RecipesState = {
   query: "",
   category: Category.None,
-  cookingTime: CookingTime.None,
   recipes: [],
   isLoading: false,
   hasError: false,
-  currentRecipe: normalizeRecipes(listRecipes)[0]
+  currentRecipe: null
 };
 
 const commentSlice = createSlice({

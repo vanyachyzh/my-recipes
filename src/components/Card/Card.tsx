@@ -1,11 +1,13 @@
 import './Card.scss';
-import { Toggle } from '../Toggle/Toggle';
-import { HeartIcon, PlusIcon } from '../Icon/Icon';
-import { normalizedRecipe } from '../../types/NormalizedRecipe';
 import { Link } from 'react-router-dom';
-import { getItems, setItems, updateLocalStorage } from '../../utils/localStorage';
+
+import { setItems } from '../../utils/localStorage';
+import { normalizedRecipe } from '../../types/NormalizedRecipe';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { updateRecipes } from '../../slices/recipes';
+
+import { Toggle } from '../Toggle/Toggle';
+import { HeartIcon, PlusIcon } from '../Icon/Icon';
 
 type Props = {
   recipe: normalizedRecipe,
@@ -26,7 +28,7 @@ export function Card({ recipe }: Props) {
       return r;
     });
 
-    setItems('favorite', updatedRecipes);
+    setItems('recipes', updatedRecipes);
     dispatch(updateRecipes(updatedRecipes));
   };
 
@@ -60,17 +62,15 @@ export function Card({ recipe }: Props) {
         ))}
       </ul>
 
-
-
       <div className='card__actions'>
         <Link to='/recipe' className='card__link'>Open</Link>
-        {/* <Toggle isActive={isFavorite} action={updateFavorite} icon={HeartIcon} /> */}
 
         <Toggle
           isActive={isFavorite}
           action={() => updateField('isFavorite')}
           icon={HeartIcon}
         />
+
         <Toggle
           isActive={isSaved}
           action={() => updateField('isSaved')}

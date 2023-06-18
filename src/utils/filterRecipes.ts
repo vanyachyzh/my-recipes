@@ -9,21 +9,20 @@ export const filterRecipes = (
   const filteredRecipes: normalizedRecipe[] = [];
   const normalizedQuery = query.toLowerCase();
 
-  // console.log(recipes, query, category)
-
   for (const recipe of recipes) {
-    const { strMeal, strCategory } = recipe;
+    const { strMeal, strCategory, ingredients } = recipe;
 
     if (
       (strMeal.toLowerCase().includes(normalizedQuery) ||
-      strCategory.toLowerCase().includes(normalizedQuery)) &&
+      strCategory.toLowerCase().includes(normalizedQuery) ||
+      ingredients.some((ingredient) =>
+        ingredient[0].toLowerCase().includes(normalizedQuery)
+      )) &&
       (category === Category.None || strCategory === category)
     ) {
       filteredRecipes.push(recipe);
     }
   }
-
-    // console.log(filteredRecipes)
 
   return filteredRecipes;
 };

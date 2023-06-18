@@ -1,10 +1,12 @@
 import { useAppSelector } from "../../app/hooks";
 import { List } from "../../components/List/List";
+import { getItems } from "../../utils/localStorage";
 import './SavedPage.scss';
 
 export function SavedPage() {
   const { recipes } = useAppSelector((state) => state.recipes);
-  const savedRecipes = recipes.filter(recipe => recipe.isSaved === true);
+  const storedRecipes = getItems('recipes');
+  const savedRecipes = (storedRecipes.length ? storedRecipes : recipes).filter(recipe => recipe.isSaved === true);
 
   return (
     <div className="saved-page">

@@ -1,5 +1,3 @@
-import { CookingTime } from "./CookingTime";
-
 export interface normalizedRecipe {
   idMeal: string | number | null,
   strCategory: string,
@@ -7,7 +5,6 @@ export interface normalizedRecipe {
   instructions: string[],
   strMeal: string,
   strMealThumb: string,
-  cookingTime: CookingTime;
   isFavorite: boolean,
   isSaved: boolean,
 };

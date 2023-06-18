@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { List } from '../../components/List/List';
-import { listRecipes } from '../../tempData';
 import { filterRecipes } from '../../utils/filterRecipes';
-import { normalizeRecipes } from '../../utils/normalizeRecipes';
-import './Home.scss';
-import { getRecipes, updateCategory, updateRecipes } from '../../slices/recipes';
-import { getItems } from '../../utils/localStorage';
+import './HomePage.scss';
+import { getRecipes, updateRecipes } from '../../slices/recipes';
+import { getItems, setItems } from '../../utils/localStorage';
 import { normalizedRecipe } from '../../types/NormalizedRecipe';
+import { normalizeRecipes } from '../../utils/normalizeRecipes';
+import { Recipe } from '../../types/Recipe';
 
 export function HomePage() {
   const { query } = useAppSelector((state) => state.recipes);
@@ -15,17 +15,19 @@ export function HomePage() {
   const { recipes } = useAppSelector((state) => state.recipes);
   const { isLoading, hasError } = useAppSelector(state => state.recipes);
   const dispatch = useAppDispatch();
-
-  const storedRecipes = getItems('favorite');
-
-  console.log(storedRecipes)
-
+  const storedRecipes = getItems('recipes');
 
   useEffect(() => {
-    if (storedRecipes) {
+    if (storedRecipes.length) {
       dispatch(updateRecipes(storedRecipes));
+      console.log(storedRecipes, 'from the storage')
     } else {
-      dispatch(getRecipes());
+      dispatch(getRecipes())
+      .then(r => {
+        console.log(r.payload, 'from the API')
+        setItems('recipes', normalizeRecipes(r.payload as Recipe[]))
+      });
+
     }
   }, []);
 
@@ -38,7 +40,7 @@ export function HomePage() {
   }
 
   return (
-    <div className="home">
+    <div className="home-page">
       {
         filterRecipes(recipes, query, category).length
           ? <List recipes={filterRecipes(recipes, query, category)} />

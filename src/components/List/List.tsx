@@ -1,5 +1,4 @@
 import React from 'react';
-import { listRecipes } from '../../tempData';
 import { normalizedRecipe } from '../../types/NormalizedRecipe';
 import { Card } from '../Card/Card';
 import './List.scss';

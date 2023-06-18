@@ -7,8 +7,7 @@ type Props = {
   isActive: boolean
 };
 
-export function Toggle({ icon: Icon, action, isActive }: Props) {
-
+export const Toggle: React.FC<Props> = ({ icon: Icon, action, isActive }) => {
   const onClick = () => {
     action();
   }

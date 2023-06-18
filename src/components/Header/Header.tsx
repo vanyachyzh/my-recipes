@@ -1,22 +1,26 @@
-import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.scss';
 import { Logo } from '../Logo/Logo';
 import { Selector } from '../Selector/Selector';
-import { Field } from '../Field/Field';
+import { SearchField } from '../SearchField/SearchField';
 import { HeartIcon, PlusIcon } from '../Icon/Icon';
-import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../app/hooks';
-import { Category } from '../../types/Category';
-import { updateCategory } from '../../slices/recipes';
 
 export const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <header className='header'>
       <div className='header__logo'>
         <Logo />
       </div>
-      <Selector />
-      <Field />
+
+      {isHomePage && (
+        <>
+          <Selector />
+          <SearchField />
+        </>
+      )}
 
       <Link to='favorite' className='header__link'>
         <HeartIcon isActive={true} />
@@ -28,5 +32,3 @@ export const Header = () => {
     </header>
   );
 };
-
-

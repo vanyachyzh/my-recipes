@@ -1,13 +1,12 @@
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 import './Button.scss';
 
 type Props = {
-  onClick?: () => void,
+  onClick: () => void,
   text: string,
   isDisabled?: boolean
 }
 
-export function Button({ onClick, text, isDisabled }: Props) {
+export const Button: React.FC<Props> = ({ onClick, text, isDisabled }) => {
   return (
     <button
       onClick={onClick}
@@ -16,6 +15,5 @@ export function Button({ onClick, text, isDisabled }: Props) {
     >
       {text}
     </button>
-
   )
 };

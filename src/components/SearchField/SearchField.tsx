@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useState } from 'react';
-import './Field.scss';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+
+import './SearchField.scss';
 import { updateQuery } from '../../slices/recipes';
 
-export const Field = () => {
+export const SearchField = () => {
   const { query } = useAppSelector(state => state.recipes);
   const dispatch = useAppDispatch();
 
@@ -21,4 +22,3 @@ export const Field = () => {
     />
   );
 };
-

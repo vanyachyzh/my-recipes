@@ -5,7 +5,7 @@ import { store } from './app/store';
 import './index.css';
 import App from './App';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { HomePage } from './pages/Home/Home';
+import { HomePage } from './pages/HomePage/HomePage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 import { SavedPage } from './pages/SavedPage/SavedPage';
 import { RecipePage } from './pages/RecipePage/RecipePage';
