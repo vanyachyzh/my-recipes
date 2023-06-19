@@ -14,11 +14,17 @@ export const filterRecipes = (
   }
 
   for (const recipe of recipes) {
-    const { strMeal, strCategory } = recipe;
+    const { strMeal, strCategory, ingredients } = recipe;
+    const normalizedIngredients = ingredients.map(([ingredient]) =>
+      ingredient.toLowerCase()
+    );
 
     if (
       (strMeal.toLowerCase().includes(normalizedQuery) ||
-      strCategory.toLowerCase().includes(normalizedQuery)) &&
+        strCategory.toLowerCase().includes(normalizedQuery) ||
+        normalizedIngredients.some((ingredient) =>
+          ingredient.includes(normalizedQuery)
+        )) &&
       (category === Category.None || strCategory === category)
     ) {
       filteredRecipes.push(recipe);

@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# My Recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Demo](https://vanyachyzh.github.io/my-recipes/)
 
-## Available Scripts
+[Video](https://www.loom.com/share/bf1103b2a30740a49a99e2b17672d354?sid=133f9fd9-fb29-4c1c-aebf-a60e1cd43e2a)
 
-In the project directory, you can run:
+My Recipes is a web application built using React, Redux, TypeScript, HTML, and SCSS. It allows users to manage their recipes, search for recipes by ingredients or title, filter recipes by meal type, and track their favorite and saved recipes.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Home Page: The home page displays a list of recipes. Each recipe card includes an "Open" button that leads to the recipe page. Additionally, there are "Favorite" and "Saved" buttons that allow users to add the recipe card to their corresponding lists.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Favorite and Saved Pages: The application provides separate pages to view favorite and saved recipes, making it easy for users to access their preferred recipes quickly.
 
-### `npm test`
+- Search and Filter: Users can search for recipes by ingredients or title. The search functionality allows for filtering recipes based on the entered query, making it convenient to find specific recipes. Additionally, users can filter recipes by the type of meal (e.g., breakfast, lunch, dinner) and combine multiple filters for more precise results.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Recipe Page: The recipe page provides detailed information about a specific recipe. It includes a cooking mode with two buttons: "Launch Process" and "Reset". Users can follow the cooking process by clicking the "Launch Process" button, and the "Reset" button allows them to start over if needed.
 
-### `npm run build`
+- Error Handling: In case of server errors or other issues, the application provides proper error handling. Users will receive error messages to inform them about the encountered problem, ensuring a smooth user experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup and Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the My Recipes application locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone the repository: git clone <repository-url>.
+- Navigate to the project directory: cd my-recipes.
+- Install the dependencies: npm install.
+- Start the development server: npm start.
+- Open the application in your web browser at http://localhost:3000.
 
-### `npm run eject`
+## Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The project relies on the following dependencies:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- Redux
+- TypeScript
+- HTML
+- SCSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can find the complete list of dependencies in the package.json file.
